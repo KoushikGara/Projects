@@ -1,0 +1,401 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display = swap');
+ 
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+ 
+body
+{
+    overflow-x: hidden;
+}
+ 
+.container
+{
+    position: relative;
+    width: 100%;
+}
+ 
+.navigation
+{
+    position: fixed;
+    width: 250px;
+    height :100%;
+    background: #003147;
+    transition: 0.5s;
+    overflow : hidden;
+}
+ 
+.navigation.active
+{
+    width:60px;
+}
+ 
+.navigation ul
+{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+}
+ 
+.navigation ul li
+{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+ 
+.navigation ul li:hover
+{
+    background: #03a9f4;
+}
+ 
+.navigation ul li:nth-child(1)
+{
+    margin-bottom: 20px;
+}
+ 
+.navigation ul li:nth-child(1):hover
+{
+    background: transparent;
+}
+ 
+.navigation ul li a
+{
+    position: relative;
+    display:block;
+    width:100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+ 
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+ 
+.navigation ul li a .icon .fa
+{
+    color:#fff;
+    font-size: 24px;
+}
+ 
+.navigation ul li a .title
+{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+ 
+ 
+ 
+ 
+.main
+{
+    position: absolute;
+    width:calc(100% - 250px);
+    left : 250px;
+    min-height: 100vh;
+    background: #f5f5f5;
+    transition: 0.5s;
+}
+ 
+.main.active
+{
+    width: calc(100% - 60px);
+    left:60px;
+}
+ 
+.main .topbar
+{
+    width: 100%;
+    background: #003147;
+    /* background: #fff; */
+    height:60px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.toggle
+{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+ 
+.toggle::before
+{
+    /* content: '\f0c9'; */
+    font-family: fontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    color:#111;
+}
+ 
+.search
+{
+    position : relative;
+    width:400px;
+    margin: 0 10px;
+}
+ 
+.search label
+{
+    position: relative;
+    width: 100%;
+}
+ 
+.search label input
+{
+    width:100%;
+    height:40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline:none;
+    border: 1 px solid rgba(0,0,0,0.2);
+}
+ 
+.search label .fa
+{
+    position: absolute;
+    left: 15px;
+    top:4px;
+}
+ 
+ .user
+{
+    position: relative;
+    overflow:hidden;
+    cursor:pointer;
+    padding: 20px;
+    color: #fff;
+   
+}
+ 
+.user:hover
+{
+    line-height: 20px;
+    height: 100%;
+    /* background: #003147;
+    color:#fff; */
+    background: #03a9f4;
+  
+    color:#fff;
+}
+/*
+.user img
+{
+    position :absolute;
+    top:0;
+    left:0;
+    width :100%;
+    height:100%;
+    object-fit:cover;
+} */
+ 
+ 
+ .dropdown-menu
+{
+    position: absolute;
+    left: 85%;
+    overflow:hidden;
+    padding: 10px;
+    margin-right: 20px;
+    color: white;
+    background-color: #003147;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+    transition: opacity 200ms ease-in-out, transform 250ms ease-in-out;
+    opacity:0;
+    z-index: 3;
+    width: fit-content;
+}
+ 
+.dropdown-menu > a
+{
+    display: block;
+    padding: 5px;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+}
+ 
+.cardBox
+{
+    position: relative;
+    width:80%;
+    padding:20px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:20px;
+}
+ 
+.cardBox .card
+{
+    position: relative;
+    background:#fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+ 
+.cardBox .card:hover
+{
+    background-color: azure;
+    transform: scale(0.9);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+}
+ 
+.cardBox .card .numbers
+{
+    position: relative;
+    font-size: 2em;
+    font-weight: 500;    
+}
+ 
+.cardBox .card .cardName
+{
+    color:#999;
+}
+ 
+.cardBox .card .iconBox
+{
+    position: relative;
+   color:#03a9f4;
+    font-size: 2m;
+    font-weight: 500;
+}
+
+.main-container
+{
+    transition: all 0.5s ease;
+}
+ 
+.main-container .title
+{
+    font-size: 2rem;
+    color:#444;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+        
+}
+
+
+.users-table
+{
+    margin: 5%;
+}
+ 
+.content-table
+{
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.title-left
+{
+    display: inline;
+}
+ 
+.content-table thead tr
+{
+    background-color: #06415d;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+    overflow: hidden;
+}
+ 
+.content-table th,
+.content-table td
+{
+	
+    padding: 0.8em 0.8em;
+}
+ 
+.content-table tbody tr
+{
+    border-bottom: 1px solid #dddddd;
+    transition: all 0.3s ease;
+}
+ 
+.content-table tbody tr:nth-of-type(even)
+{
+    background-color:#d4d4d4;
+}
+ 
+.content-table tbody tr:last-of-type
+{
+    border-bottom: 2px solid #06415d;
+}
+ 
+.content-table tbody tr:hover
+{
+    background-color: #06425dcb;
+    color: white;
+}
+ 
+.content-table tbody tr td:last-of-type
+{
+    width: 120px;
+    font-size: small;
+    cursor: pointer;
+    background-color:salmon;
+    color: white;
+    transition: all 0.3s ease;
+}
+ 
+.content-table tbody tr td:last-of-type:hover
+{
+    background-color: salmon;
+    color:white;
+}
+
+.user-button
+{
+    background: none;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+ 
+.user-button:hover
+{
+    
+    font-weight: bold;
+    transform: scale(1.1);
+}
